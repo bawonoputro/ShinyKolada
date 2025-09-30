@@ -3,7 +3,7 @@
     "path": "~/Documents/LiU/Advanced Programming R/Lab5/ShinyKolada/app.R",
     "project_path": "app.R",
     "type": "r_source",
-    "hash": "1505550818",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1759238866573.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "20,0",
-        "scrollLine": "0"
+        "cursorPosition": "40,35",
+        "scrollLine": "24"
     },
     "folds": "",
-    "lastKnownWriteTime": 1759243346,
+    "lastKnownWriteTime": 1759249052,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1759243346419,
+    "last_content_update": 1759249052330,
     "read_only": false,
     "read_only_alternatives": []
 }
