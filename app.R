@@ -20,9 +20,9 @@ ui <- fluidPage(
   DTOutput("kpi"),
   tags$hr(),
   h4("Organisation Units"),
-  selectInput("ou_filter", "Filter by municipality code:",
-              choices = c("All"), selected = "All"),
-  tableOutput("ou")
+  selectInput("ou_filter", "Filter by municipality:",
+              choices = c("All" = "All"), selected = "All"),
+  DTOutput("ou")
 )
 
 server <- function(input, output, session) {
@@ -43,6 +43,8 @@ server <- function(input, output, session) {
 
   # OUs
   all_ou <- get_ou()
+  mun_df <- get_municipalities()
+
 
 
   observe({
@@ -53,12 +55,14 @@ server <- function(input, output, session) {
                       selected = "All")
   })
 
-  output$ou <- renderTable({
+
+  output$ou <- renderDT({
     o <- all_ou
     if (input$ou_filter != "All") {
       o <- subset(o, municipality == input$ou_filter)
     }
-    head(o[c("id","title","municipality")], 20)
+    o <- o[c("id", "title", "municipality")]
+    datatable(o, options = list(pageLength = 20))
   })
 }
 
